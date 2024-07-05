@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stress Berat</title>
+    <link rel="stylesheet" href="/pbw/build/assets/css/output.css" />
+    <link rel="stylesheet" href="/pbw/build/assets/css/navbar.css" />
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      .loader {
+        border-top-color: #3498db;
+        animation: spin 1s ease-in-out infinite;
+        height: 24px;
+        /* Height of the loader */
+        width: 24px;
+        /* Width of the loader */
+        border-width: 4px;
+        /* Thickness of the border */
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.5s forwards;
+      }
+
+      .fade-out {
+        animation: fadeOut 0.5s forwards;
+      }
+    </style>
+  </head>
+  <!-- Navbar Start -->
+  <header
+    class="bg-transparent absolute top-0 left-0 w-full flex items-center z-20"
+  >
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4">
+          <a
+            href="/pbw/build/index.php"
+            class="font-bold text-lg text-primary block py-6"
+            >KitaSehat</a
+          >
+        </div>
+        <div class="flex items-center px-4">
+          <button
+            id="hamburger"
+            name="hamburger"
+            type="button"
+            class="block absolute right-4 lg:hidden"
+          >
+            <span
+              class="hamburger-line transition duration-300 ease-in-out origin-top-left"
+            ></span>
+            <span
+              class="hamburger-line transition duration-300 ease-in-out"
+            ></span>
+            <span
+              class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"
+            ></span>
+          </button>
+
+          <!-- Nav -->
+          <nav
+            id="nav-menu"
+            class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+          >
+            <ul class="block lg:flex">
+              <li class="group">
+                <a
+                  href="/pbw/build/index.php#Kategori"
+                  class="text-base text-white py-2 mx-8 flex group-hover:text-primary"
+                  >Kategori</a
+                >
+              </li>
+              <li class="group">
+                <a
+                  href="/pbw/build/index.php#cek-kesehatan"
+                  class="text-base text-white py-2 mx-8 flex group-hover:text-primary"
+                  >Cek Kesehatan</a
+                >
+              </li>
+              <li class="group">
+                <a
+                  href="/pbw/build/index.php#about"
+                  class="text-base text-white py-2 mx-8 flex group-hover:text-primary"
+                  >Tentang</a
+                >
+              </li>
+              <li class="group" id="profile-button">
+                <a
+                  href="/pbw/build/pages/profile.php"
+                  class="text-base text-white py-2 mx-8 flex group-hover:text-primary"
+                  >Profil</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Navbar End -->
+  <body>
+    <div
+      id="loadingScreen"
+      class="fixed inset-0 flex flex-col items-center justify-center bg-gray-800 bg-opacity-75 z-50 hidden"
+    >
+      <div
+        class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 mb-4"
+      ></div>
+      <p class="text-gray-200 text-lg animate-pulse">Loading...</p>
+    </div>
+
+    <section id="stress-berat">
+      <div
+        class="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-10 overflow-hidden mx-52 pt-20"
+      >
+        <section
+          class="rounded-lg lg:col-span-2 flex-shrink-0 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center pb-8"
+        >
+          <div class="flex justify-center items-center h-full">
+            <img
+              src="/pbw/build/assets/img/obesitas.png"
+              alt="BMI Image"
+              class="w-1/2 max-w-screen-xl"
+            />
+          </div>
+
+          <div class="text-center mt-4 mx-28">
+            <p class="text-2xl font-bold mt-4">Obesitas</p>
+            <p class="text-xl font-bold text-purple-800 py-4">30 ++</p>
+            <p class="pb-5">
+              Obesitas membawa efek bagi tubuh, meningkatkan risiko kematian,
+              serta mengembangkan kondisi kesehatan tertentu, seperti:
+            </p>
+
+            <ul class="list-disc pl-5 mx-7 py-5 text-left pb-12">
+              <li>Diabetes tipe 2.</li>
+              <li>Penyakit jantung koroner.</li>
+              <li>Stroke.</li>
+              <li>Penyakit kantung empedu.</li>
+            </ul>
+
+            <button
+              class="bg-primary hover:bg-primary-hover text-white font-bold py-2 px-4 rounded"
+              onclick="hitungUlang()"
+            >
+              Hitung Ulang
+            </button>
+          </div>
+        </section>
+
+        <div
+          class="rounded-lg bg-white shadow-lg overflow-hidden flex flex-col items-center h-auto lg:h-96"
+        >
+          <h1 class="font-bold text-center pt-2 mt-2">Tips Untukmu</h1>
+          <ul class="list-disc pl-5 mx-7 py-5">
+            <p>
+              Jika ingin menurunkan berat badan, ketahui dulu berapa banyak
+              kalori yang Anda butuhkan per hari untuk menjalankan fungsi dasar
+              tubuh dan aktivitas sehari-hari. Penting juga untuk mengetahui
+              bagaimana kondisi kesehatan Anda saat ini, karena hal ini akan
+              memengaruhi perhitungan kalori harian. Selanjutnya, lihat label
+              informasi nilai gizi pada produk, catat berapa kalori yang akan
+              dikonsumsi. Sesuaikan dengan jumlah kalori yang sudah dikurangi
+              sebelumnya dari total kebutuhan kalori harian. konsumsi makanan
+              dan minuman dengan kandungan kalori yang lebih sedikit dari
+              kebutuhan harian.
+            </p>
+          </ul>
+        </div>
+
+        <section
+          class="rounded-lg bg-gray-200 lg:col-span-2 flex-shrink-0 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center pb-5 mt-8"
+        >
+          <div class="mt-4 mx-28 text-left">
+            <p class="text-xl font-bold mt-4 pb-5">Disclaimer</p>
+            <p class="pb-12">
+              Anda dianggap memiliki kelebihan berat badan, jika indeks massa
+              tubuh (BMI) melebihi 30++.
+            </p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <script src="/pbw/build/assets/js/result_bmi.js"></script>
+    <script src="/pbw/build/assets/js/script.js"></script>
+  </body>
+
+  <!-- Footer Start -->
+  <footer class="bg-dark pt-24 pb-12">
+    <div class="container">
+      <div class="flex flex-warp">
+        <div class="w-full px-4 mb-12 text-slate-300 font-lg md:w-1/3">
+          <a href="#home" class="font-bold text-lg text-primary block"
+            >KitaSehat¿</a
+          >
+          <h3 class="font-bold text-2xl mb-2">Hubungi Kami</h3>
+          <p>kitasehat@gmail.med.id</p>
+          <p>Jl. Veteran No. 16 Jakarta Pusat, Indonesia</p>
+          <p>Telp. (021) 3863777, 3503088</p>
+          <p>Fax: (021) 3442223</p>
+        </div>
+        <div class="w-full px-4 mb-12 md:w-1/3">
+          <h3 class="font-semibold text-xl text-white mb-5">
+            Kategori Masalah Kesehatan
+          </h3>
+          <ul class="text-slate-300 pt-2">
+            <li>
+              <a
+                href="/pbw/build/pages/kehamilan.php"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Kehamilan</a
+              >
+            </li>
+            <li>
+              <a
+                href="/pbw/build/pages/nutrisi.php"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Nutrisi</a
+              >
+            </li>
+            <li>
+              <a
+                href="/pbw/build/pages/kebugaran.php"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Kebugaran</a
+              >
+            </li>
+            <li>
+              <a
+                href="/pbw/build/pages/pola-tidur.php"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Pola Tidur</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="w-full px-4 mb-12 md:w-1/3">
+          <h3 class="font-semibold text-xl text-white mb-5">Tautan</h3>
+          <ul class="text-slate-300">
+            <li>
+              <a
+                href="#home"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a
+                href="#Kategori"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Kategori</a
+              >
+            </li>
+            <li>
+              <a
+                href="#cek-kesehatan"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Cek Kesehatan</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#clients"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Tentang Kami</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#blog"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Profil</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                class="inline-block text-base mb-3 hover:text-primary"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="w-full pt-10 border-t border-slate-700">
+        <div class="flex items-center justify-center mb-5"></div>
+        <p class="font-medium text-xs text-slate-500 text-center">
+          Dibuat dengan <span class="text-pink-500">❤️</span> oleh
+          <a href="#" target="_blank" class="font-bold text-primary"
+            >Kelompok 3</a
+          >
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+</html>
